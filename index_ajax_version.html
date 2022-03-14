@@ -14,7 +14,14 @@
         <header>
             <div class="header-top d-flex justify-content-between align-items-center">
                 <img src="img/logo.svg" alt="">
+                <div class="ms_select">
+                    <select v-model="selectedGenre" @change="filteredAlbum()">
+                       <option value="">Seleziona il genere</option>
+                       <option v-for="(genre, index) in listaGeneri" :value="genre" :key="index">{{genre}}</option> 
+                    </select> 
+                </div>
             </div>
+            
         </header>
 
         <main>
@@ -22,7 +29,7 @@
 
                 <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 justify-content-center ">
         
-                    <div class="text-center" v-for="(album, indice) in albums">
+                    <div class="text-center" v-for="(album, indice) in filteredAlbum">
                         <div class="ms_box ">
                             <img class="ms_img-fluid" :src="album.poster" alt="">
                             <h3>{{album.title}}</h3>
