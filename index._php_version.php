@@ -29,23 +29,19 @@
 
     <main>
         <div class="container">
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 justify-content-center ">
-                
-                    <?php
-                        foreach($database as $key => $albums){
-                            foreach($albums as $key){
-                                echo '<div class="text-center">';
-                                    echo '<div class="ms_box">';
-                                        echo "<img src=".$key['poster']." "."class="."ms_img-fluid".">";
-                                        echo "<h3>".$key['title']."</h3>";
-                                        echo "<h5>".$key['author']."</h5>";
-                                        echo "<h5>".$key['year']."</h5>";
-                                    echo'</div>';
-                                echo'</div>';
-                            }; 
-                        };
-                    ?> 
- 
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 justify-content-center "> 
+                <?php
+                    foreach($database['albums'] as $key){
+                        echo '<div class="text-center">';
+                            echo '<div class="ms_box">';
+                                echo "<img src=".$key['poster']." "."class="."ms_img-fluid".">";
+                                echo "<h3>".$key['title']."</h3>";
+                                echo "<h5>".$key['author']."</h5>";
+                                echo "<h5>".$key['year']."</h5>";
+                            echo'</div>';
+                        echo'</div>';
+                    };
+                ?> 
             </div>
         </div>
     </main>
